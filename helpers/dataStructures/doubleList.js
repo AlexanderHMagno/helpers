@@ -10,7 +10,7 @@ class Node {
 
 
 
-class singleList {
+class DoubleList {
     constructor () {
         this.head = null;
         this.tail = null;
@@ -142,7 +142,7 @@ class singleList {
     }
 }
 
-let list = new singleList()
+let list = new DoubleList()
 
 list.push(1);
 list.push(2);
