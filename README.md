@@ -1,5 +1,5 @@
-# Common helpers
+Common helpers
 
-*Data Structure for JS
-*Common patterns JS
-*Sort Algorithms JS
+1.Data Structure for JS. 
+2.Common patterns JS. 
+3.Sort Algorithms JS. 
