@@ -119,6 +119,6 @@ Tree.insert(10).insert(5).insert(13).insert(11).insert(2).insert(16)
 
 console.log(Tree)
 console.log(Tree.BFS())
-console.log(Tree.PreDFS());
+console.log(Tree.DFSPree());
 console.log(Tree.DFSPost());
 console.log(Tree.DFSinOrder());
