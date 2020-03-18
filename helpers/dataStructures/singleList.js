@@ -9,7 +9,7 @@ class Node {
 
 
 
-class singleList {
+class SingleList {
     constructor () {
         this.head = null;
         this.tail = null;
@@ -130,7 +130,7 @@ class singleList {
     }
 }
 
-let list = new singleList()
+let list = new SingleList()
 
 
 
