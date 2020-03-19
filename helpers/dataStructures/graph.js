@@ -69,15 +69,36 @@ class Graph {
       traverse(root);
       return data;
   }
+
+  BFS = vertex => {
+      if (!this.adjacencyList[vertex]) return 'Add a valid vertex';
+      let queue = [vertex];
+      let data = [];
+      let visited = {};
+      visited[vertex] = true;
+      while (queue.length) {
+         let dequeue = queue.shift();
+         data.push(dequeue);
+         this.adjacencyList[dequeue].forEach(neighbor => {
+           
+           if (!visited[neighbor]){
+             visited[neighbor] = true;
+              queue.push(neighbor);
+           } ;
+         })
+      }
+      return data;
+  }
 }
 
 let grafica = new Graph();
-grafica.addVertex('alex').addVertex('sebas').addVertex('ma');
-grafica.addEdge('alex','sebas');
-grafica.addEdge('alex','roberto');
-grafica.addEdge('alex','natalia');
-grafica.addEdge('natalia','roberto');
-grafica.addEdge('roberto','andres');
+grafica.addVertex('CANADA').addVertex('USA').addVertex('ma');
+grafica.addEdge('CANADA','USA');
+grafica.addEdge('CANADA','COLOMBIA');
+grafica.addEdge('CANADA','MEXICO');
+grafica.addEdge('MEXICO','COLOMBIA');
+grafica.addEdge('COLOMBIA','FRANCIA');
 console.log(grafica);
-console.log(grafica.DFSrecursive('alex'));
+console.log(grafica.DFSrecursive('CANADA'));
+console.log(grafica.BFS('CANADA'))
 
