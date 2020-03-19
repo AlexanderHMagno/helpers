@@ -52,8 +52,32 @@ class Graph {
       }
       return false;
   }
+
+  DFSrecursive = (start) => {
+    
+      let root = this.adjacencyList[start];
+      let data = [];
+      let visited = {}
+      const traverse = (vertex) => {
+        for (let x = 0; x < vertex.length; x ++) {
+          if (visited[vertex[x]]) continue;
+          visited[vertex[x]] = vertex[x];
+          data.push(vertex[x]);
+          traverse(this.adjacencyList[vertex[x]]);
+        }
+      }
+      traverse(root);
+      return data;
+  }
 }
 
 let grafica = new Graph();
-grafica.addVertex('alex').addVertex('sebas');
+grafica.addVertex('alex').addVertex('sebas').addVertex('ma');
+grafica.addEdge('alex','sebas');
+grafica.addEdge('alex','roberto');
+grafica.addEdge('alex','natalia');
+grafica.addEdge('natalia','roberto');
+grafica.addEdge('roberto','andres');
+console.log(grafica);
+console.log(grafica.DFSrecursive('alex'));
 
